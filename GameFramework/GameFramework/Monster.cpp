@@ -3,6 +3,7 @@
 
 void Monster::Update()
 {
+	//
 }
 
 void Monster::Render()
