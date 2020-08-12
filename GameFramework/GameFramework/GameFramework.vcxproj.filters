@@ -100,10 +100,10 @@
       <Filter>GameObject\Character</Filter>
     </ClInclude>
     <ClInclude Include="Monster.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>GameObject\Character</Filter>
     </ClInclude>
     <ClInclude Include="Bullet.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>GameObject\Character</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -156,10 +156,10 @@
       <Filter>GameObject\Character</Filter>
     </ClCompile>
     <ClCompile Include="Monster.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>GameObject\Character</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>GameObject\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
