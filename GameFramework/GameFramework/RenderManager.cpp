@@ -121,6 +121,7 @@ void RenderManager::DrawSimpleCollider(const RECT& _rc, COLORREF _outlineColor)
 	DeleteObject(hPen);
 }
 
+
 void RenderManager::DrawCircle(const RECT& _rc)
 {
 	Ellipse(pRenderManager->hBackBufferDC, _rc.left, _rc.top, _rc.right, _rc.bottom);

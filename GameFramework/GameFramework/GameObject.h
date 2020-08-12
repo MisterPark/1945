@@ -29,11 +29,13 @@ public:
 	void SetPosition(float _x, float _y);
 	
 
+public:
 	D3DXVECTOR3 position{ 0.f,0.f,0.f };
-	D3DXVECTOR3 direction{ 1.f,0.f,0.f };
 	D3DXVECTOR3 rotation{ 0.f,0.f,0.f };
 	D3DXVECTOR3 scale{ 1.f,1.f,1.f };
 	
+	float radian = 0.f;
+
 	ObjectType type = ObjectType::NONE;
 	int uid = 0;
 	bool isDead = false;

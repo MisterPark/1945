@@ -33,6 +33,27 @@ void Player::Update()
 	{
 		position.x += speed * TimeManager::DeltaTime();
 	}
+
+	if (InputManager::GetKeyDown(VK_LBUTTON))
+	{
+		Character* b = (Character*)ObjectManager::CreateObject(ObjectType::BULLET);
+		b->position = this->position;
+
+		POINT pt;
+		GetCursorPos(&pt);
+		ScreenToClient(g_hwnd, &pt);
+		D3DXVECTOR3 targetPos{ 0.f,0.f,0.f };
+		targetPos.x = pt.x;
+		targetPos.y = pt.y;
+		targetPos -= position;
+		D3DXVec3Normalize(&targetPos, &targetPos);
+		b->radian = atan2f(targetPos.y, targetPos.x);
+		b->speed = 100.f;
+
+	}
+
+
+	
 }
 
 void Player::Render()
