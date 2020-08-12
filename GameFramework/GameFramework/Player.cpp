@@ -18,22 +18,20 @@ void Player::Update()
 {
 	if (InputManager::GetKey(VK_UP))
 	{
-		position = position + direction * speed * TimeManager::DeltaTime();
+		position.y -= speed * TimeManager::DeltaTime();
 	}
 	else if (InputManager::GetKey(VK_DOWN))
 	{
-		position = position - direction * speed * TimeManager::DeltaTime();
+		position.y += speed * TimeManager::DeltaTime();
 	}
 
 	if (InputManager::GetKey(VK_LEFT))
 	{
-		rotation.z -= 1.f;
-		rotation.z = fmodf(rotation.z, 360.f);
+		position.x -= speed * TimeManager::DeltaTime();
 	}
 	else if (InputManager::GetKey(VK_RIGHT))
 	{
-		rotation.z += 1.f;
-		rotation.z = fmodf(rotation.z, 360.f);
+		position.x += speed * TimeManager::DeltaTime();
 	}
 }
 

@@ -4,6 +4,7 @@
 #include "UI.h"
 #include "Player.h"
 #include "Monster.h"
+#include "Bullet.h"
 
 ObjectManager* pObjectManager = nullptr;
 int lastUid = 0;
@@ -31,6 +32,9 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	GameObject* pObj = nullptr;
 	switch (_type)
 	{
+	case ObjectType::BULLET:
+		pObj = new Bullet;
+		break;
 	case ObjectType::MONSTER:
 		pObj = new Monster;
 		break;
