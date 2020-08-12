@@ -4,6 +4,7 @@
 enum class ObjectType
 {
 	NONE,
+	MONSTER,
 	PLAYER,
 	UI,
 

@@ -62,3 +62,11 @@ void Player::Render()
 	//RenderManager::DrawRect(rc.left, rc.top, rc.right, rc.bottom);
 	RenderManager::DrawLine(position.x, position.y, posinDirection.x, posinDirection.y);
 }
+
+void Player::OnCollision(GameObject * _other)
+{
+	if (_other->type == ObjectType::MONSTER)
+	{
+
+	}
+}

@@ -3,6 +3,7 @@
 #include "Character.h"
 #include "UI.h"
 #include "Player.h"
+#include "Monster.h"
 
 ObjectManager* pObjectManager = nullptr;
 int lastUid = 0;
@@ -30,6 +31,9 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	GameObject* pObj = nullptr;
 	switch (_type)
 	{
+	case ObjectType::MONSTER:
+		pObj = new Monster;
+		break;
 	case ObjectType::PLAYER:
 		pObj = new Player;
 		break;
