@@ -10,5 +10,8 @@ public:
 	virtual void OnLoaded() override;
 	virtual void OnUnloaded() override;
 	virtual void Update() override;
+
+private:
+	list<GameObject*> listObject;
 };
 

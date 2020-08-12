@@ -7,7 +7,11 @@ public:
 	Monster() = default;
 	~Monster() = default;
 
-	virtual void Update() override;
-	virtual void Render() override;
+public:
+	void Render() override;
+	void Update() override;
+	void Ready_Monster();
+
+	int ReadyCount = 0;
 };
 
