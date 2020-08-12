@@ -33,7 +33,7 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	switch (_type)
 	{
 	case ObjectType::BULLET:
-		pObj = new Bullet;
+		pObj = pObjectManager->bulletPool.Alloc();
 		break;
 	case ObjectType::MONSTER:
 		pObj = new Monster;
@@ -129,12 +129,21 @@ void ObjectManager::LateUpdate()
 				{
 					iter = objList.erase(iter);
 
+
 					if (dynamic_cast<Character*>(target) != nullptr)
 					{
 						CollisionManager::DisregisterObject(target);
 					}
 
-					delete target;
+					if (dynamic_cast<Bullet*>(target) != nullptr)
+					{
+						pObjectManager->bulletPool.Free((Bullet*)target);
+					}
+					else
+					{
+						delete target;
+					}
+					
 				}
 				else
 				{

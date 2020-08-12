@@ -9,7 +9,7 @@ TimeManager::TimeManager()
 
 TimeManager::~TimeManager()
 {
-	
+
 }
 
 TimeManager* TimeManager::GetInstance()
@@ -17,6 +17,11 @@ TimeManager* TimeManager::GetInstance()
 	if (pTimeManager == nullptr)
 	{
 		pTimeManager = new TimeManager();
+
+		if (QueryPerformanceFrequency(&pTimeManager->frequency))
+		{
+			pTimeManager->isUsedQueryPerformance = true;
+		}
 	}
 	return pTimeManager;
 }
@@ -31,14 +36,18 @@ void TimeManager::SetFrame(int _framePerSec)
 {
 	if (_framePerSec < 0)return;
 	pTimeManager->targetFPS = _framePerSec;
-	pTimeManager->targetFrameRate = 1000 / _framePerSec;
+	pTimeManager->targetFrameRate = 1000.f / _framePerSec;
 }
 
 bool TimeManager::SkipFrame()
 {
-	DWORD curTime = GetTickCount(); // 현재 측정 시간
-	DWORD elapse; // 1프레임 경과시간 (ms)
-	
+	LARGE_INTEGER time;
+	__int64 curTime;
+	__int64 elapse; // 1프레임 경과시간 (ms)
+
+	QueryPerformanceCounter(&time); // 고성능 현재시간
+	curTime = time.QuadPart;
+
 
 	if (pTimeManager->oldTime == 0)
 	{
@@ -46,14 +55,15 @@ bool TimeManager::SkipFrame()
 		return false;
 	}
 
-	// 프레임당 걸린시간 ms
-	elapse = curTime - pTimeManager->oldTime;
+	// 프레임당 걸린시간 (마이크로 세컨)
+	elapse = (curTime - pTimeManager->oldTime) / 10000;
+
 	pTimeManager->elapseSum += elapse;
 	// 올드타임 갱신
 	pTimeManager->oldTime = curTime;
 	// 델타타임 갱신
-	pTimeManager->deltaTime = (float)elapse / 1000;
-	
+	pTimeManager->deltaTime = float(elapse) / 1000.f;
+
 	// 프레임 카운트
 	pTimeManager->frameCounter++;
 
@@ -71,13 +81,13 @@ bool TimeManager::SkipFrame()
 	{
 		pTimeManager->timeStack -= pTimeManager->targetFrameRate;
 		return true;
-		
+
 	}
 	else if (pTimeManager->timeStack < pTimeManager->targetFrameRate) // 빠르면
 	{
 		Sleep(abs(pTimeManager->timeStack));
 	}
-		
+
 
 	return false;
 }
@@ -95,6 +105,6 @@ int TimeManager::GetFPS()
 void TimeManager::RenderFPS()
 {
 	WCHAR wstr[8];
-	wsprintf(wstr, L"%d", pTimeManager->fps);
-	RenderManager::DrawString(wstr, 0, 0,RGB(255,60,255));
+	wsprintf(wstr, L"%ld", pTimeManager->fps);
+	RenderManager::DrawString(wstr, 0, 0, RGB(255, 60, 255));
 }

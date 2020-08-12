@@ -4,6 +4,7 @@
 
 using namespace std;
 
+class Bullet;
 
 class ObjectManager
 {
@@ -24,4 +25,5 @@ public:
 
 
 	list<GameObject*>objectTable[MaxOfEnum<ObjectType>()];
+	MemoryPool<Bullet> bulletPool;
 };

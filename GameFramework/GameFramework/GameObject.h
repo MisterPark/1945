@@ -40,4 +40,5 @@ public:
 	bool isEnable = true;
 	bool isVisible = true;
 	bool jumpFlag = false;
+	bool isAlliance = true;
 };
