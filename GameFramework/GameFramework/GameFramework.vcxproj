@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Character.h" />
     <ClInclude Include="CollisionManager.h" />
@@ -161,9 +162,16 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="IScene.h" />
+    <ClInclude Include="LPlane.h" />
+    <ClInclude Include="LTank.h" />
     <ClInclude Include="MainGame.h" />
+    <ClInclude Include="MCannon.h" />
     <ClInclude Include="MemoryPool.h" />
-    <ClInclude Include="Monster.h" />
+    <ClInclude Include="MPlane.h" />
+    <ClInclude Include="MTank.h" />
+    <ClInclude Include="SPlane_1.h" />
+    <ClInclude Include="SPlane_2.h" />
+    <ClInclude Include="STank.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Player.h" />
@@ -177,6 +185,7 @@
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
@@ -185,8 +194,15 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="IScene.cpp" />
+    <ClCompile Include="LPlane.cpp" />
+    <ClCompile Include="LTank.cpp" />
     <ClCompile Include="MainGame.cpp" />
-    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="MCannon.cpp" />
+    <ClCompile Include="MPlane.cpp" />
+    <ClCompile Include="MTank.cpp" />
+    <ClCompile Include="SPlane_1.cpp" />
+    <ClCompile Include="SPlane_2.cpp" />
+    <ClCompile Include="STank.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

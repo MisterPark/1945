@@ -1,11 +1,11 @@
 #pragma once
 #include "Character.h"
-class Monster :
+class SPlane_1 :
 	public Character
 {
 public:
-	Monster() = default;
-	~Monster() = default;
+	SPlane_1() = default;
+	~SPlane_1() = default;
 
 public:
 	void Render() override;
