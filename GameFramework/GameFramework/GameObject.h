@@ -10,6 +10,7 @@ enum class ObjectType
 	LTANK,
 	SPLANE_1,
 	SPLANE_2,
+	SPLANE_3,
 	MPLANE,
 	LPLANE,
 	MCANNON,

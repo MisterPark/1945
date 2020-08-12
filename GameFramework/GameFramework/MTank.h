@@ -4,14 +4,13 @@ class MTank :
 	public Character
 {
 public:
-	MTank() = default;
-	~MTank() = default;
+	MTank();
+	virtual ~MTank();
 
 public:
 	void Render() override;
 	void Update() override;
-	void Ready_Monster();
 
-	int ReadyCount = 0;
+
 };
 

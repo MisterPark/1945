@@ -8,6 +8,7 @@
 #include "LTank.h"
 #include "SPlane_1.h"
 #include "SPlane_2.h"
+#include "SPlane_3.h"
 #include "MPlane.h"
 #include "LPlane.h"
 #include "MCannon.h"
@@ -58,6 +59,10 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	case ObjectType::SPLANE_2:
 		pObj = new SPlane_2;
 		break;
+	case ObjectType::SPLANE_3:
+		pObj = new SPlane_3;
+		break;
+
 	case ObjectType::MPLANE:
 		pObj = new MPlane;
 		break;

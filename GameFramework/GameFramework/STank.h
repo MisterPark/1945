@@ -10,8 +10,7 @@ public:
 public:
 	void Render() override;
 	void Update() override;
-	void Ready_Monster();
 
-	int ReadyCount = 0;
+
 };
 

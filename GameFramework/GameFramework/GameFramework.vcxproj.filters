@@ -132,6 +132,9 @@
     <ClInclude Include="SPlane_2.h">
       <Filter>GameObject\Character\Monsters</Filter>
     </ClInclude>
+    <ClInclude Include="SPlane_3.h">
+      <Filter>GameObject\Character\Monsters</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameFramework.cpp">
@@ -210,6 +213,9 @@
       <Filter>GameObject\Character\Monsters</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
+      <Filter>GameObject\Character\Monsters</Filter>
+    </ClCompile>
+    <ClCompile Include="SPlane_3.cpp">
       <Filter>GameObject\Character\Monsters</Filter>
     </ClCompile>
   </ItemGroup>

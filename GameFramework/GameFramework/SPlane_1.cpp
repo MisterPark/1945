@@ -1,30 +1,38 @@
 #include "pch.h"
 #include "SPlane_1.h"
 
+
+SPlane_1::SPlane_1()
+{
+	scale.x = 25;
+	scale.y = 25;
+	speed = 300.f;
+}
+
+SPlane_1::~SPlane_1()
+{
+}
+
 void SPlane_1::Update()
 {
-	Ready_Monster();
-	if (destination.x - position.x > 0)
-		++position.x*speed;
-	if (destination.x - position.x < 0)
-		--position.x*speed;
-	++position.y* speed;
+
+
+	position.y += speed*TimeManager::DeltaTime();
+
+	if (position.y > 300)
+	{
+		speed *= -1.f;
+	}
+	if (speed < 0)
+	{
+		position.x -= speed * TimeManager::DeltaTime();
+	}
 }
+
 
 
 void SPlane_1::Render()
 {
 	RenderManager::DrawRect(position, rotation, scale);
 
-}
-
-void SPlane_1::Ready_Monster()
-{
-	if (ReadyCount == 0)
-	{
-		scale.x = 20;
-		scale.y = 20;
-		speed = 10.f;
-		++ReadyCount;
-	}
 }
