@@ -4,9 +4,9 @@
 void MTank::Update()
 {
 	Ready_Monster();
-	if (direction.x - position.x > 0)
+	if (destination.x - position.x > 0)
 		++position.x;
-	if (direction.x - position.x < 0)
+	if (destination.x - position.x < 0)
 		--position.x;
 	++position.y;
 }

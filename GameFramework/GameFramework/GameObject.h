@@ -45,6 +45,9 @@ public:
 	
 	float radian = 0.f;
 
+	D3DXVECTOR3 destination{ 0.f,0.f,0.f };
+	GameObject* target = nullptr;
+
 	ObjectType type = ObjectType::NONE;
 	int uid = 0;
 	bool isDead = false;

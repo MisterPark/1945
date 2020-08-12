@@ -42,7 +42,7 @@ void TestScene::MonsterCreate()
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
 			pMonster->position = { 400.f,-50,0 };
-			pMonster->direction = { 450.f,150.f,0 };
+			pMonster->destination = { 450.f,150.f,0 };
 			listObject.push_back(pMonster);
 			++iMonsterCount;
 		}
@@ -54,7 +54,7 @@ void TestScene::MonsterCreate()
 			
 				GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
 				pMonster->position = { 600.f,200,0 };
-				pMonster->direction = { 500.f,150.f,0 };
+				pMonster->destination = { 500.f,150.f,0 };
 				listObject.push_back(pMonster);
 			
 			++iMonsterCount;
@@ -66,7 +66,7 @@ void TestScene::MonsterCreate()
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::MTANK);
 			pMonster->position = { 600.f,200,0 };
-			pMonster->direction = { 500.f,150.f,0 };
+			pMonster->destination = { 500.f,150.f,0 };
 			listObject.push_back(pMonster);
 			++iMonsterCount;
 		}
