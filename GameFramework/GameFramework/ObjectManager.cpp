@@ -3,7 +3,15 @@
 #include "Character.h"
 #include "UI.h"
 #include "Player.h"
-#include "Monster.h"
+#include "STank.h"
+#include "MTank.h"
+#include "LTank.h"
+#include "SPlane_1.h"
+#include "SPlane_2.h"
+#include "MPlane.h"
+#include "LPlane.h"
+#include "MCannon.h"
+#include "Boss.h"
 #include "Bullet.h"
 
 ObjectManager* pObjectManager = nullptr;
@@ -35,8 +43,32 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	case ObjectType::BULLET:
 		pObj = pObjectManager->bulletPool.Alloc();
 		break;
-	case ObjectType::MONSTER:
-		pObj = new Monster;
+	case ObjectType::STANK:
+		pObj = new STank;
+		break;
+	case ObjectType::MTANK:
+		pObj = new MTank;
+		break;
+	case ObjectType::LTANK:
+		pObj = new LTank;
+		break;
+	case ObjectType::SPLANE_1:
+		pObj = new SPlane_1;
+		break;
+	case ObjectType::SPLANE_2:
+		pObj = new SPlane_2;
+		break;
+	case ObjectType::MPLANE:
+		pObj = new MPlane;
+		break;
+	case ObjectType::LPLANE:
+		pObj = new LPlane;
+		break;
+	case ObjectType::MCANNON:
+		pObj = new MCannon;
+		break;
+	case ObjectType::BOSS:
+		pObj = new Boss;
 		break;
 	case ObjectType::PLAYER:
 		pObj = new Player;

@@ -84,7 +84,7 @@ void Player::Render()
 
 void Player::OnCollision(GameObject * _other)
 {
-	if (_other->type == ObjectType::MONSTER)
+	if (_other->type == ObjectType::STANK)
 	{
 
 	}

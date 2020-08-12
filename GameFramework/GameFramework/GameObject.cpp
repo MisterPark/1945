@@ -21,4 +21,10 @@ void GameObject::SetPosition(float _x, float _y)
 	position.y = _y;
 }
 
+void GameObject::SetDirection(float _x, float _y)
+{
+	direction.x = _x;
+	direction.y = _y;
+}
+
 

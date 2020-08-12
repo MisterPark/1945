@@ -10,5 +10,12 @@ public:
 	virtual void OnLoaded() override;
 	virtual void OnUnloaded() override;
 	virtual void Update() override;
+
+	void MonsterCreate();
+private:
+	list<GameObject*> listObject;
+	float tick = 0.f;
+	float delay = 5.f;
+	int iMonsterCount = 0;
 };
 
