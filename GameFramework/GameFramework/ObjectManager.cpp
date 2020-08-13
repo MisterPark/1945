@@ -139,6 +139,14 @@ void ObjectManager::DestroyAll(ObjectType _type)
 	}
 }
 
+GameObject* ObjectManager::FindObject(ObjectType _type)
+{
+	auto& objList = pObjectManager->objectTable[(int)_type];
+	if (objList.size() == 0) return nullptr;
+
+	return *objList.begin();
+}
+
 void ObjectManager::Release()
 {
 	delete pObjectManager;

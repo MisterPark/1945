@@ -11,6 +11,6 @@ public:
 	void Render() override;
 	void Update() override;
 
-
+	bool isShooted = false;
 };
 
