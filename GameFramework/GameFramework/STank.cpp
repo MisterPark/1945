@@ -9,6 +9,8 @@ STank::STank()
 	transform.rotation.z = 45.f;
 	attackDelay = rand() % 3 + 3;
 	isAlliance = false;
+	simpleCollider = { -20,-20,20,20 };
+	hp = 3;
 }
 
 STank::~STank()
@@ -51,6 +53,7 @@ void STank::Update()
 
 	}
 }
+
 
 
 

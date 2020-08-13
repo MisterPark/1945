@@ -7,7 +7,9 @@ LPlane::LPlane()
 	transform.scale.x = 50;
 	transform.scale.y = 50;
 	speed = 100.f;
-	
+	isAlliance = false;
+	simpleCollider = { -50,-50,50,50 };
+	hp = 15;
 }
 
 LPlane::~LPlane()

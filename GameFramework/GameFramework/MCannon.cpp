@@ -9,6 +9,8 @@ MCannon::MCannon()
 	transform.rotation.z = 45.f;
 	attackDelay = rand() % 3 + 3;
 	isAlliance = false;
+	simpleCollider = { -35,-35,35,35 };
+	hp = 5;
 }
 
 MCannon::~MCannon()

@@ -31,7 +31,7 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{b4f5fbdb-362a-4e40-b47f-7d1c7c4923d9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObject\Character\Monsters">
+    <Filter Include="GameObject\Character\Enemy">
       <UniqueIdentifier>{77f110da-56c5-4283-97c1-f19abb1765e2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -106,39 +106,42 @@
       <Filter>GameObject\Character</Filter>
     </ClInclude>
     <ClInclude Include="STank.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="MTank.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Boss.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="LPlane.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="LTank.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="MCannon.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="MPlane.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="SPlane_1.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="SPlane_2.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="SPlane_3.h">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="TestMonster.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Panel.h">
+      <Filter>GameObject\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -195,34 +198,34 @@
       <Filter>GameObject\Character</Filter>
     </ClCompile>
     <ClCompile Include="STank.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="MTank.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="SPlane_2.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="SPlane_1.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="MPlane.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="MCannon.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="LTank.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="LPlane.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="Boss.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="SPlane_3.cpp">
-      <Filter>GameObject\Character\Monsters</Filter>
+      <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
     <ClCompile Include="TestMonster.cpp">
       <Filter>소스 파일</Filter>
@@ -231,6 +234,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Panel.cpp">
+      <Filter>GameObject\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

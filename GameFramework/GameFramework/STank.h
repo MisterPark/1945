@@ -1,7 +1,7 @@
 #pragma once
-#include "Character.h"
+#include "Enemy.h"
 class STank :
-	public Character
+	public Enemy
 {
 public:
 	STank();
@@ -10,7 +10,6 @@ public:
 public:
 	void Render() override;
 	void Update() override;
-
 
 };
 

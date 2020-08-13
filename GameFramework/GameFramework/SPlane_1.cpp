@@ -8,6 +8,8 @@ SPlane_1::SPlane_1()
 	transform.scale.y = 15;
 	speed = 300.f;
 	isAlliance = false;
+	simpleCollider = { -15,-15,15,15 };
+	hp = 1;
 }
 
 SPlane_1::~SPlane_1()

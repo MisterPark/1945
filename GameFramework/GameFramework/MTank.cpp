@@ -9,6 +9,8 @@ MTank::MTank()
 	transform.rotation.z = 45.f;
 	attackDelay = rand() % 3 + 3;
 	isAlliance = false;
+	simpleCollider = { -25,-25,25,25 };
+	hp = 5;
 }
 
 MTank::~MTank()
@@ -46,6 +48,18 @@ void MTank::Update()
 
 		b->isAlliance = false;
 
+	}
+}
+
+void MTank::OnCollision(GameObject* _other)
+{
+	if (_other->type == ObjectType::BULLET && _other->isAlliance != isAlliance)
+	{
+		hp--;
+		if (hp < 0)
+		{
+			Die();
+		}
 	}
 }
 

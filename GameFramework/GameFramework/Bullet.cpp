@@ -29,7 +29,7 @@ void Bullet::Render()
 
 void Bullet::OnCollision(GameObject * _other)
 {
-	if (isAlliance != _other->isAlliance)
+	if (_other->type != ObjectType::BULLET && isAlliance != _other->isAlliance)
 	{
 		Die();
 	}

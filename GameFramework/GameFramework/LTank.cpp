@@ -11,6 +11,8 @@ LTank::LTank()
 	SecondCount = 0.f;
 	attackDelay = rand() % 3 + 3;
 	isAlliance = false;
+	simpleCollider = { -35,-35,35,35 };
+	hp = 7;
 }
 
 LTank::~LTank()
@@ -63,6 +65,18 @@ void LTank::Update()
 
 		b->isAlliance = false;
 
+	}
+}
+
+void LTank::OnCollision(GameObject* _other)
+{
+	if (_other->type == ObjectType::BULLET && _other->isAlliance != isAlliance)
+	{
+		hp--;
+		if (hp < 0)
+		{
+			Die();
+		}
 	}
 }
 

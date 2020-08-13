@@ -19,6 +19,7 @@ public:
 	static void DestroyAll(ObjectType _type);
 	static GameObject* FindObject(ObjectType _type);
 
+	static GameObject* FindNearestEnemy(GameObject* _base);
 	static GameObject* FindNearestEnemy(ObjectType _type, GameObject* _base);
 	
 
