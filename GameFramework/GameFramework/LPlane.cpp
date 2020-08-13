@@ -10,6 +10,7 @@ LPlane::LPlane()
 	isAlliance = false;
 	simpleCollider = { -50,-50,50,50 };
 	hp = 15;
+	attackDelay = 1.f;
 }
 
 LPlane::~LPlane()
@@ -50,6 +51,18 @@ void LPlane::Update()
 		speed = 200.f;
 		transform.position.x += speed * TimeManager::DeltaTime();
 		transform.position.y += speed * TimeManager::DeltaTime();
+	}
+
+	attackTick += TimeManager::DeltaTime();
+	if (attackTick > attackDelay)
+	{
+		attackTick = 0.f;
+
+		GameObject* p = ObjectManager::FindObject(ObjectType::PLAYER);
+		if (p == nullptr) return;
+		MultiShot(p, 5);
+
+
 	}
 }
 

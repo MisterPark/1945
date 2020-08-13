@@ -172,6 +172,7 @@
     <ClInclude Include="MPlane.h" />
     <ClInclude Include="MTank.h" />
     <ClInclude Include="Panel.h" />
+    <ClInclude Include="RevolutionBullet.h" />
     <ClInclude Include="SPlane_1.h" />
     <ClInclude Include="SPlane_2.h" />
     <ClInclude Include="SPlane_3.h" />
@@ -208,6 +209,7 @@
     <ClCompile Include="MPlane.cpp" />
     <ClCompile Include="MTank.cpp" />
     <ClCompile Include="Panel.cpp" />
+    <ClCompile Include="RevolutionBullet.cpp" />
     <ClCompile Include="SPlane_1.cpp" />
     <ClCompile Include="SPlane_2.cpp" />
     <ClCompile Include="SPlane_3.cpp" />

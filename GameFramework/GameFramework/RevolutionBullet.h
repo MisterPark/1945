@@ -1,16 +1,14 @@
 #pragma once
-#include "Character.h"
-class Bullet :
-	public Character
+#include "Bullet.h"
+class RevolutionBullet :
+    public Bullet
 {
 public:
-	Bullet();
-	virtual ~Bullet();
+	RevolutionBullet();
+	virtual ~RevolutionBullet();
 
 	virtual void Update() override;
 	virtual void Render() override;
 	virtual void OnCollision(GameObject* _other) override;
-
-	bool isReversing = false;
 };
 

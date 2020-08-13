@@ -14,6 +14,11 @@ public:
 	void SetColliderSize(LONG left, LONG top, LONG right, LONG bottom);
 
 	void PushOut(Character* target, float _force);
+	void Shot(GameObject* target);
+	void Shot(GameObject* target, D3DXVECTOR3 pos);
+	void MultiShot(GameObject* target, int count);
+	void MultiShot(GameObject* target, D3DXVECTOR3 pos, int count);
+	void MultiShotRev(GameObject* target, D3DXVECTOR3 pos, int count, bool reverse);
 
 public:
 	float speed = 0.f;

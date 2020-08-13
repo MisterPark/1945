@@ -5,6 +5,7 @@ enum class ObjectType
 {
 	NONE,
 	TEST_MONSTER,
+	REV_BULLET,
 	BULLET,
 	MISSILE,
 	STANK,

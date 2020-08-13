@@ -16,6 +16,7 @@
 #include "Bullet.h"
 #include "TestMonster.h"
 #include "Panel.h"
+#include "RevolutionBullet.h"
 #include "Missle.h"
 
 ObjectManager* pObjectManager = nullptr;
@@ -46,6 +47,10 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	{
 	case ObjectType::TEST_MONSTER:
 		pObj = new TestMonster;
+		break;
+	case ObjectType::REV_BULLET:
+		pObj = pObjectManager->bulletPool.Alloc();
+		new (pObj)RevolutionBullet;
 		break;
 	case ObjectType::BULLET:
 		pObj = pObjectManager->bulletPool.Alloc();

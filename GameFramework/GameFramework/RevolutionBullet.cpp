@@ -1,16 +1,24 @@
 #include "pch.h"
-#include "Bullet.h"
+#include "RevolutionBullet.h"
 
-Bullet::Bullet()
+RevolutionBullet::RevolutionBullet()
 {
 }
 
-Bullet::~Bullet()
+RevolutionBullet::~RevolutionBullet()
 {
 }
 
-void Bullet::Update()
+void RevolutionBullet::Update()
 {
+	if (isReversing)
+	{
+		radian -= D3DXToRadian(1.f);
+	}
+	else
+	{
+		radian += D3DXToRadian(1.f);
+	}
 	
 	transform.position.x = transform.position.x + cosf(radian) * speed * TimeManager::DeltaTime();
 	transform.position.y = transform.position.y + sinf(radian) * speed * TimeManager::DeltaTime();
@@ -22,12 +30,12 @@ void Bullet::Update()
 	}
 }
 
-void Bullet::Render()
+void RevolutionBullet::Render()
 {
 	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 }
 
-void Bullet::OnCollision(GameObject * _other)
+void RevolutionBullet::OnCollision(GameObject* _other)
 {
 	if (_other->type == ObjectType::BULLET) return;
 	if (_other->type == ObjectType::REV_BULLET) return;
