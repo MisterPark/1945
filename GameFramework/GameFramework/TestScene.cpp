@@ -729,7 +729,7 @@ void TestScene::MonsterCreate()
 
 
 	//STANK
-	if (60 < tick)
+	if (64 < tick)
 	{
 		if (iPlaneCount == 15)
 		{

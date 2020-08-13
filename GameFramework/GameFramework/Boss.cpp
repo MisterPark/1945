@@ -8,10 +8,13 @@ Boss::Boss()
 	transform.scale.y = 1;
 	speed = 100.f;
 	yspeed = 100.f;
+	//왼쪽팔
 	leftarm.scale = { 0.25f,0.5f,0.f };
 	leftarm.rotation = { 0.f,0.f,0.f };
+	//오른쪽팔
 	rightarm.scale = { 0.25f,0.5f,0.f };
 	rightarm.rotation = { 0.f,0.f,0.f };
+	hp = 300;
 }
 
 Boss::~Boss()
@@ -20,13 +23,16 @@ Boss::~Boss()
 
 void Boss::Update()
 {
-	
+	//생성단계
 	if (SecondCount == 0)
 	{
 		if (transform.scale.x < 100)
 		{
+			//왼쪽팔 위치
 			leftarm.position = { transform.position.x - 200,transform.position.y + 100,0.f };
+			//오른쪽팔 위치
 			rightarm.position = { transform.position.x + 200,transform.position.y + 100,0.f };
+
 			transform.position.y += speed * TimeManager::DeltaTime();
 			transform.rotation.z += speed;
 			++transform.scale.x;
@@ -39,6 +45,7 @@ void Boss::Update()
 		else
 		{
 			++SecondCount;
+			hp = 300;
 		}
 	}
 	else
@@ -62,6 +69,8 @@ void Boss::Update()
 		rightarm.position.x -= speed * TimeManager::DeltaTime();
 		leftarm.position.y -= yspeed * TimeManager::DeltaTime();
 		rightarm.position.y -= yspeed * TimeManager::DeltaTime();
+
+		//1페이즈
 		if (SecondCount == 1)
 		{
 
@@ -71,7 +80,7 @@ void Boss::Update()
 			{
 				transform.rotation.z += speed;
 			}
-			if (count > 100)
+			if (hp < 200)
 			{
 				++SecondCount;
 				yspeed = 200.f;
@@ -80,7 +89,7 @@ void Boss::Update()
 			}
 		}
 	}
-
+	//2페이즈
 	if (SecondCount == 2)
 	{
 		++count;
@@ -88,7 +97,7 @@ void Boss::Update()
 		{
 			transform.rotation.z += speed;
 		}
-		if (count > 100)
+		if (hp < 100)
 		{
 			++SecondCount;
 			yspeed = 300.f;
@@ -96,12 +105,15 @@ void Boss::Update()
 			count = 0;
 		}
 	}
+	//3페이즈
 	if (SecondCount == 3)
 	{
 
 			transform.rotation.z += speed;
 
 	}
+
+
 }
 
 
