@@ -567,7 +567,7 @@ void TestScene::MonsterCreate()
 	//SPLANE_1
 	if (25 < tick)
 	{
-		if (iPlaneCount == 6)
+		if (iPlaneCount == 7)
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
 			pMonster->transform.position = { 250.f,-50,0 };
@@ -606,7 +606,7 @@ void TestScene::MonsterCreate()
 	//SPLANE_2
 	if (25.5 < tick)
 	{
-		if (iPlaneCount == 7)
+		if (iPlaneCount == 8)
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
 			pMonster->transform.position = { 250.f,-50,0 };
@@ -632,7 +632,19 @@ void TestScene::MonsterCreate()
 		}
 	}
 
-	
+	//LPLAIN
+	if (33 < tick)
+	{
+		if (iPlaneCount == 9)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::LPLANE);
+			pMonster->transform.position = { 500.f,-200,0 };
+			pMonster->destination = { 500.f,300.f,0 };
+			listObject.push_back(pMonster);
+
+			++iPlaneCount;
+		}
+	}
 
 
 	if (28 < tick)
@@ -653,13 +665,150 @@ void TestScene::MonsterCreate()
 
 			pMonster = ObjectManager::CreateObject(ObjectType::LTANK);
 			pMonster->transform.position = { 290.f,-150.f,0 };
-			listObject.push_back(pMonster);
+			listObject.push_back(pMonster); 
 
 			pMonster = ObjectManager::CreateObject(ObjectType::MCANNON);
 			pMonster->transform.position = { 360.f,-360.f,0 };
 			listObject.push_back(pMonster);
 
 			++iMonsterCount;
+		}
+	}
+	//SPLANE_1+SPLAN_2
+	if (35 < tick)
+	{
+		if (iPlaneCount == 10)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 250.f,-50,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 350.f,-200,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 450.f,-350,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 550.f,-500,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 250.f,-50,0 };
+			pMonster->destination = { dfWINDOW_WIDTH + 50,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 350.f,-80,0 };
+			pMonster->destination = { -50.f,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 450.f,-80,0 };
+			pMonster->destination = { dfWINDOW_WIDTH + 50,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 550.f,-50,0 };
+			pMonster->destination = { -50.f,0.f,0 };
+			listObject.push_back(pMonster);
+			++iPlaneCount;
+		}
+	}
+
+	//LPLAIN
+	if (39 < tick)
+	{
+		if (iPlaneCount == 11)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::LPLANE);
+			pMonster->transform.position = { 570.f,-120,0 };
+			pMonster->destination = { 500.f,180.f,0 };
+			listObject.push_back(pMonster);
+
+			++iPlaneCount;
+		}
+	}
+
+	//SPLANE_1
+	if (45 < tick)
+	{
+		if (iPlaneCount == 12)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 250.f,-50,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 350.f,-200,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 450.f,-350,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_1);
+			pMonster->transform.position = { 550.f,-500,0 };
+			listObject.push_back(pMonster);
+
+			++iPlaneCount;
+		}
+	}
+	//MPLAIN
+	if (51 < tick)
+	{
+		if (iPlaneCount == 13)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::MPLANE);
+			pMonster->transform.position = { -100.f,200.f,0.f };
+			pMonster->destination = { 0.f,0.f,0.f };
+			dynamic_cast<MPlane*>(pMonster)->Set_forceX(1.f);
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::MPLANE);
+			pMonster->transform.position = { dfWINDOW_WIDTH+100.f,200.f,0.f };
+			pMonster->destination = { 500.f,0.f,0.f };
+			dynamic_cast<MPlane*>(pMonster)->Set_forceX(-1.f);
+			listObject.push_back(pMonster);
+
+
+			pMonster = ObjectManager::CreateObject(ObjectType::MPLANE);
+			pMonster->transform.position = { dfWINDOW_WIDTH,400.f,0.f };
+			pMonster->destination = { 500.f,0.f,0.f };
+			dynamic_cast<MPlane*>(pMonster)->Set_forceX(-1.f);
+			listObject.push_back(pMonster);
+
+			++iPlaneCount;
+		}
+	}
+	//SPLANE_2
+	if (55 < tick)
+	{
+		if (iPlaneCount == 14)
+		{
+			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 250.f,-50,0 };
+			pMonster->destination = { dfWINDOW_WIDTH + 50,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 350.f,-80,0 };
+			pMonster->destination = { -50.f,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 450.f,-80,0 };
+			pMonster->destination = { dfWINDOW_WIDTH + 50,0.f,0 };
+			listObject.push_back(pMonster);
+
+			pMonster = ObjectManager::CreateObject(ObjectType::SPLANE_2);
+			pMonster->transform.position = { 550.f,-50,0 };
+			pMonster->destination = { -50.f,0.f,0 };
+			listObject.push_back(pMonster);
+
+			++iPlaneCount;
 		}
 	}
 }
