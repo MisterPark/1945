@@ -729,9 +729,9 @@ void TestScene::MonsterCreate()
 
 
 	//STANK
-	if (64 < tick)
+	if (1 < tick)
 	{
-		if (iPlaneCount == 15)
+		if (iPlaneCount == 0)
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::BOSS);
 			pMonster->transform.position = { 400.f,-50,0 };

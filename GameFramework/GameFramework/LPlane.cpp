@@ -60,20 +60,7 @@ void LPlane::Update()
 
 		GameObject* p = ObjectManager::FindObject(ObjectType::PLAYER);
 		if (p == nullptr) return;
-		D3DXVECTOR3 dir = p->transform.position - transform.position;
-		D3DXVec3Normalize(&dir, &dir);
-		float rad = atan2f(dir.y, dir.x);
-
-		for (int i = -2; i < 3; i++)
-		{
-			Character* b = (Character*)ObjectManager::CreateObject(ObjectType::BULLET);
-			b->transform.scale = { 5.f,5.f,0.f };
-			b->simpleCollider = { -5,-5,5,5 };
-			b->transform.position = this->transform.position;
-			b->radian = rad + D3DXToRadian(i * 10);
-			b->speed = 400.f;
-			b->isAlliance = false;
-		}
+		MultiShot(p, 5);
 
 
 	}

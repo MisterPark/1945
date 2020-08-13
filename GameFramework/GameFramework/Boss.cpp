@@ -75,7 +75,6 @@ void Boss::Update()
 		//1페이즈
 		if (SecondCount == 1)
 		{
-
 			++count;
 
 			if (int(count) % 50 == 0)
@@ -85,10 +84,24 @@ void Boss::Update()
 			if (hp < 200)
 			{
 				++SecondCount;
-				yspeed = 200.f;
-				speed = 200.f;
+				yspeed = 150.f;
+				speed = 150.f;
 				count = 0;
 			}
+
+			attackTick += TimeManager::DeltaTime();
+			if (attackTick > 0.5f)
+			{
+				attackTick = 0.f;
+				
+				GameObject* p = ObjectManager::FindObject(ObjectType::PLAYER);
+				if (p == nullptr) return;
+				Shot(p, leftarm.position);
+				Shot(p, rightarm.position);
+				
+			}
+
+			
 		}
 	}
 	//2페이즈
@@ -102,9 +115,19 @@ void Boss::Update()
 		if (hp < 100)
 		{
 			++SecondCount;
-			yspeed = 300.f;
-			speed = 300.f;
+			yspeed = 200.f;
+			speed = 200.f;
 			count = 0;
+		}
+
+		attackTick += TimeManager::DeltaTime();
+		if (attackTick > 1.5f)
+		{
+			attackTick = 0.f;
+			GameObject* p = ObjectManager::FindObject(ObjectType::PLAYER);
+			if (p == nullptr) return;
+			MultiShot(p, leftarm.position, 5);
+			MultiShot(p, rightarm.position, 5);
 		}
 	}
 	//3페이즈
@@ -113,6 +136,17 @@ void Boss::Update()
 
 			transform.rotation.z += speed;
 
+
+			attackTick += TimeManager::DeltaTime();
+			if (attackTick > 0.5f)
+			{
+				attackTick = 0.f;
+				GameObject* p = ObjectManager::FindObject(ObjectType::PLAYER);
+				if (p == nullptr) return;
+
+				reverse = !reverse;
+				MultiShotRev(p, transform.position, 24, reverse);
+			}
 	}
 
 

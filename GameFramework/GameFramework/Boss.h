@@ -17,5 +17,6 @@ public:
 	float count = 0.f;
 	float SecondCount = 0.f;
 	float yspeed = 0.f;
+	bool reverse = false;
 };
 

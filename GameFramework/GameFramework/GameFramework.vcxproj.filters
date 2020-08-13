@@ -34,6 +34,9 @@
     <Filter Include="GameObject\Character\Enemy">
       <UniqueIdentifier>{77f110da-56c5-4283-97c1-f19abb1765e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObject\Character\Bullet">
+      <UniqueIdentifier>{3603b5b9-7681-472c-b9bf-5a8536ef45ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -102,9 +105,6 @@
     <ClInclude Include="Player.h">
       <Filter>GameObject\Character</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
-      <Filter>GameObject\Character</Filter>
-    </ClInclude>
     <ClInclude Include="STank.h">
       <Filter>GameObject\Character\Enemy</Filter>
     </ClInclude>
@@ -143,6 +143,12 @@
     </ClInclude>
     <ClInclude Include="Enemy.h">
       <Filter>GameObject\Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>GameObject\Character\Bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="RevolutionBullet.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +200,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>GameObject\Character</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
-      <Filter>GameObject\Character</Filter>
-    </ClCompile>
     <ClCompile Include="STank.cpp">
       <Filter>GameObject\Character\Enemy</Filter>
     </ClCompile>
@@ -238,6 +241,12 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>GameObject\Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>GameObject\Character\Bullet</Filter>
+    </ClCompile>
+    <ClCompile Include="RevolutionBullet.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
