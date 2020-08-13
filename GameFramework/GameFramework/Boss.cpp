@@ -52,29 +52,18 @@ void Boss::Update()
 	}
 	else
 	{
-		if (transform.position.x < 250)
-			speed *= -1.f;
-		else if (transform.position.x > 550)
-			speed *= -1.f;
 
-		if (transform.position.y < 100)
-		{
-			yspeed *= -1.f;
-		}
-		else if (transform.position.y > 300)
-		{
-			yspeed *= -1.f;
-		}
-		transform.position.x -= speed * TimeManager::DeltaTime();
-		transform.position.y -= yspeed * TimeManager::DeltaTime();
-		leftarm.position.x -= speed * TimeManager::DeltaTime();
-		rightarm.position.x -= speed * TimeManager::DeltaTime();
-		leftarm.position.y -= yspeed * TimeManager::DeltaTime();
-		rightarm.position.y -= yspeed * TimeManager::DeltaTime();
 
 		//1페이즈
 		if (SecondCount == 1)
 		{
+			if (transform.position.x < 250)
+				speed *= -1.f;
+			else if (transform.position.x > 550)
+				speed *= -1.f;
+			transform.position.x -= speed * TimeManager::DeltaTime();
+			leftarm.position.x -= speed * TimeManager::DeltaTime();
+			rightarm.position.x -= speed * TimeManager::DeltaTime();
 			++count;
 
 			if (int(count) % 50 == 0)
@@ -107,6 +96,25 @@ void Boss::Update()
 	//2페이즈
 	if (SecondCount == 2)
 	{
+		if (transform.position.x < 250)
+			speed *= -1.f;
+		else if (transform.position.x > 550)
+			speed *= -1.f;
+
+		if (transform.position.y < 100)
+		{
+			yspeed *= -1.f;
+		}
+		else if (transform.position.y > 300)
+		{
+			yspeed *= -1.f;
+		}
+		transform.position.x -= speed * TimeManager::DeltaTime();
+		transform.position.y -= yspeed * TimeManager::DeltaTime();
+		leftarm.position.x -= speed * TimeManager::DeltaTime();
+		rightarm.position.x -= speed * TimeManager::DeltaTime();
+		leftarm.position.y -= yspeed * TimeManager::DeltaTime();
+		rightarm.position.y -= yspeed * TimeManager::DeltaTime();
 		++count;
 		if (int(count) % 12 == 0)
 		{
@@ -133,7 +141,51 @@ void Boss::Update()
 	//3페이즈
 	if (SecondCount == 3)
 	{
+		++count;
+		if (leftarm.scale.x > 0)
+		{
+			leftarm.scale.x -= 1;
+			leftarm.scale.y -= 1;
+			rightarm.scale.x -= 1;
+			rightarm.scale.y -= 1;
+		}
 
+
+		if (int(count) % 3 == 0)
+		{
+			transform.position.x += speed * 10.f * TimeManager::DeltaTime();
+		}
+
+		if (int(count) % 5 == 0)
+		{
+			transform.position.x += speed * 10.f * TimeManager::DeltaTime();
+		}
+		if (transform.position.x < 250)
+			speed *= -1.f;
+		else if (transform.position.x > 550)
+			speed *= -1.f;
+		if (count < 10)
+		{
+			transform.position.y += yspeed * 3.f * TimeManager::DeltaTime();
+		}
+
+		if (int(count) % 3)
+		{
+			transform.position.y += yspeed * 1.5f * TimeManager::DeltaTime();
+		}
+
+		if (count > 20)
+		{
+			count = 0;
+		}
+		if (transform.position.y < 100)
+		{
+			yspeed *= -1.f;
+		}
+		else if (transform.position.y > 300)
+		{
+			yspeed *= -1.f;
+		}
 			transform.rotation.z += speed;
 
 
