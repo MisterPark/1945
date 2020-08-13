@@ -76,28 +76,7 @@ void Player::Update()
 
 void Player::Render()
 {
-	RECT rc = {};
-	rc.left = transform.position.x - transform.scale.x;
-	rc.top = transform.position.y - transform.scale.y;
-	rc.right = transform.position.x + transform.scale.x;
-	rc.bottom = transform.position.y + transform.scale.y;
-	
-	// x * cos@ - y*sin@ , x*sin@ + y * cos@
-
-
-	// Æ÷½Å
-	POINT pt;
-	GetCursorPos(&pt);
-	ScreenToClient(g_hwnd, &pt);
-	D3DXVECTOR3 posinDirection = { float(pt.x),float(pt.y),0.f };
-	posinDirection -= transform.position;
-	D3DXVec3Normalize(&posinDirection, &posinDirection);
-	posinDirection *= posinLength;
-	posinDirection += transform.position;
-	
 	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
-	//RenderManager::DrawRect(rc.left, rc.top, rc.right, rc.bottom);
-	RenderManager::DrawLine(transform.position.x, transform.position.y, posinDirection.x, posinDirection.y);
 }
 
 void Player::OnCollision(GameObject * _other)
