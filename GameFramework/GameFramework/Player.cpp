@@ -3,10 +3,11 @@
 
 Player::Player()
 {
-	transform.position.x = 100;
-	transform.position.y = 100;
+	transform.position.x = dfWINDOW_WIDTH / 2;
+	transform.position.y = dfWINDOW_HEIGHT - 100;
 	transform.scale.x = 20;
 	transform.scale.y = 20;
+	simpleCollider = { -20,-20,20,20 };
 	speed = 300.f;
 }
 
@@ -117,5 +118,6 @@ void Player::Attack()
 		b->transform.position = this->transform.position;
 		b->radian = D3DXToRadian(270.f);
 		b->speed = 700.f;
+		b->simpleCollider = { -5,-30,5,30 };
 	}
 }

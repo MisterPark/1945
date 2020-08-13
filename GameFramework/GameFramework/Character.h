@@ -10,6 +10,7 @@ public:
 	virtual void Render() override;
 
 	bool isCollided(const GameObject* _target);
+	RECT GetCollisionArea();
 	void SetColliderSize(LONG left, LONG top, LONG right, LONG bottom);
 
 	void PushOut(Character* target, float _force);

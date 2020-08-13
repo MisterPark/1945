@@ -1,4 +1,5 @@
 #include "pch.h"
+#include "Transform.h"
 
 Transform::Transform(float x, float y, float z)
 {
@@ -24,8 +25,8 @@ void Transform::RotateAround(D3DXVECTOR3 point, float angle)
 	pos.x = position.x * cosf(rad) - position.y * sinf(rad);
 	pos.y = position.x *sinf(rad) + position.y * cos(rad);
 
-	//pos.x *= 10;
-	//pos.y *= 10;
+	//pos.x += 10;
+	//pos.y += 10;
 
 	position = pos;
 	//pos.x = point.x;
