@@ -18,6 +18,7 @@ enum class ObjectType
 	BOSS,
 	PLAYER,
 	UI,
+	PANEL,
 
 	END
 };

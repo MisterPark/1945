@@ -12,7 +12,12 @@ TestScene::~TestScene()
 
 void TestScene::OnLoaded()
 {
+	GameObject* panel = ObjectManager::CreateObject(ObjectType::PANEL);
+	panel->position = { 60,300,0 };
+	panel->scale = { 60,300,0 };
+
 	ObjectManager::CreateObject(ObjectType::PLAYER);
+
 
 	ObjectManager::CreateObject(ObjectType::TEST_MONSTER);
 }

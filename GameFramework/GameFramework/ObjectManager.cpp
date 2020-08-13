@@ -15,6 +15,7 @@
 #include "Boss.h"
 #include "Bullet.h"
 #include "TestMonster.h"
+#include "Panel.h"
 
 ObjectManager* pObjectManager = nullptr;
 int lastUid = 0;
@@ -84,6 +85,9 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 		break;
 	case ObjectType::UI:
 		pObj = new UI();
+		break;
+	case ObjectType::PANEL:
+		pObj = new Panel;
 		break;
 	default:
 		return nullptr;
