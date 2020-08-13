@@ -12,7 +12,6 @@ public:
 public:
 	void Render() override;
 	void Update() override;
-	virtual void OnCollision(GameObject* _other);
 	float forceX = 1.f;
 
 	float count = 0.f;

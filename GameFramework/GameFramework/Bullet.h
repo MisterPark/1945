@@ -12,5 +12,10 @@ public:
 	virtual void OnCollision(GameObject* _other) override;
 
 	bool isReversing = false;
+	bool isAccelerate = false;
+
+	float accelCount = 1.f;
+
+
 };
 

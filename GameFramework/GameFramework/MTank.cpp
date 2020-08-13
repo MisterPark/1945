@@ -50,19 +50,7 @@ void MTank::Update()
 
 	}
 }
-
-void MTank::OnCollision(GameObject* _other)
-{
-	if (_other->type == ObjectType::BULLET && _other->isAlliance != isAlliance)
-	{
-		hp--;
-		if (hp < 0)
-		{
-			Die();
-		}
-	}
-}
-
+ 
 
 
 void MTank::Render()

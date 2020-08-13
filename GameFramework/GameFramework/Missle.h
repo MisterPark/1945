@@ -12,5 +12,6 @@ public:
 	virtual void Render() override;
 	virtual void OnCollision(GameObject* _other) override;
 
+	float msTick = 0.f;
 };
 
