@@ -61,7 +61,7 @@ void MPlane::Update()
 		D3DXVec3Normalize(&dir, &dir);
 		float rad = atan2f(dir.y, dir.x);
 
-		for (int i = 0; i < 3; i++)
+		for (int i = -1; i < 2; i++)
 		{
 			Character* b = (Character*)ObjectManager::CreateObject(ObjectType::BULLET);
 			b->transform.scale = { 5.f,5.f,0.f };

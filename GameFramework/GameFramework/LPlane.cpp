@@ -10,6 +10,7 @@ LPlane::LPlane()
 	isAlliance = false;
 	simpleCollider = { -50,-50,50,50 };
 	hp = 15;
+	attackDelay = 1.f;
 }
 
 LPlane::~LPlane()
