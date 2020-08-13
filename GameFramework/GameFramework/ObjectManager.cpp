@@ -147,6 +147,25 @@ GameObject* ObjectManager::FindObject(ObjectType _type)
 	return *objList.begin();
 }
 
+GameObject* ObjectManager::FindNearestEnemy(ObjectType _type, GameObject* _base)
+{
+	auto& objList = pObjectManager->objectTable[(int)_type];
+	GameObject* target = nullptr;
+	int minDist = MAXINT;
+	D3DXVECTOR3 temp;
+	for (auto iter : objList)
+	{
+		int dist = abs(_base->transform.position.x - iter->transform.position.x)
+			+ abs(_base->transform.position.y - iter->transform.position.y);
+		if (dist < minDist)
+		{
+			target = iter;
+			minDist = dist;
+		}
+	}
+	return target;
+}
+
 void ObjectManager::Release()
 {
 	delete pObjectManager;

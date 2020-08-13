@@ -19,6 +19,9 @@ public:
 	static void DestroyAll(ObjectType _type);
 	static GameObject* FindObject(ObjectType _type);
 
+	static GameObject* FindNearestEnemy(ObjectType _type, GameObject* _base);
+	
+
 	static void Release();
 	static void Update();
 	static void LateUpdate();
