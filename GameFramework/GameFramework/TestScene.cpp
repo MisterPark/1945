@@ -45,7 +45,18 @@ void TestScene::MonsterCreate()
 {
 	tick += TimeManager::DeltaTime();
 
-
+	////STANK
+	//if (1 < tick)
+	//{
+	//	if (iPlaneCount == 0)
+	//	{
+	//		GameObject* pMonster = ObjectManager::CreateObject(ObjectType::BOSS);
+	//		pMonster->transform.position = { 400.f,-50,0 };
+	//		pMonster->destination = { 550.f,150.f,0 };
+	//		listObject.push_back(pMonster);
+	//		++iPlaneCount;
+	//	}
+	//}
 	//STANK
 	if (1 < tick)
 	{
@@ -728,10 +739,10 @@ void TestScene::MonsterCreate()
 	}
 
 
-	//STANK
-	if (1 < tick)
+	//BOSS
+	if (64 < tick)
 	{
-		if (iPlaneCount == 0)
+		if (iPlaneCount == 15)
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::BOSS);
 			pMonster->transform.position = { 400.f,-50,0 };
