@@ -6,6 +6,7 @@ STank::STank()
 {
 	transform.scale.x = 20;
 	transform.scale.y = 20;
+	transform.rotation.z = 45.f;
 }
 
 STank::~STank()

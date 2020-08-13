@@ -4,9 +4,9 @@
 
 MTank::MTank()
 {
-	transform.scale.x = 25;
-	transform.scale.y = 25;
-
+	transform.scale.x = 25.f;
+	transform.scale.y = 25.f;
+	transform.rotation.z = 45.f;
 }
 
 MTank::~MTank()
@@ -16,10 +16,7 @@ MTank::~MTank()
 void MTank::Update()
 {
 
-	if (destination.x - transform.position.x > 0)
-		++transform.position.x;
-	if (destination.x - transform.position.x < 0)
-		--transform.position.x;
+
 	++transform.position.y;
 }
 
