@@ -16,7 +16,5 @@ public:
 	float posinLength = 40.f;
 	float posinDegree = 0.f;
 
-	float attackTick = 0.f;
-	float attackDelay = 0.1f;
 };
 

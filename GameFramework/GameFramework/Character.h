@@ -25,4 +25,7 @@ public:
 	int gravityCount = 0;
 
 	int jumpCount = 0;
+
+	float attackTick = 0.f;
+	float attackDelay = 0.1f;
 };
