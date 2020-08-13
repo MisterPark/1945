@@ -6,6 +6,7 @@ enum class ObjectType
 	NONE,
 	TEST_MONSTER,
 	BULLET,
+	MISSILE,
 	STANK,
 	MTANK,
 	LTANK,
@@ -19,6 +20,7 @@ enum class ObjectType
 	PLAYER,
 	UI,
 	PANEL,
+
 
 	END
 };

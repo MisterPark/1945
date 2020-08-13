@@ -12,9 +12,19 @@ public:
 	virtual void OnCollision(GameObject* _other);
 
 	void Attack();
+	void Bomb(); /// ½ºÅ³
+ 
+	float subAttackTick = 0.f;
+	float subAttackDelay = 0.4f;
 
-	float posinLength = 40.f;
-	float posinDegree = 0.f;
+
+	float bombTick = 0.f;
+	float bombDelay = 0.5f;
+
+
+	float c1Tick = 0.f;
+
+	
 
 };
 

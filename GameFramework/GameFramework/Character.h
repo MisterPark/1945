@@ -22,6 +22,7 @@ public:
 	int score = 0;
 	// ม฿ทย
 	bool useGravity = false;
+	bool missile = false;
 	int gravityCount = 0;
 	int hp = 1;
 	int jumpCount = 0;

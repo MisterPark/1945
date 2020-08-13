@@ -1,11 +1,12 @@
 #pragma once
 #include "Character.h"
-class Bullet :
+
+class Missle :
 	public Character
 {
 public:
-	Bullet();
-	virtual ~Bullet();
+	Missle();
+	virtual ~Missle();
 
 	virtual void Update() override;
 	virtual void Render() override;

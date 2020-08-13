@@ -144,6 +144,9 @@
     <ClInclude Include="Enemy.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Missle.h">
+      <Filter>GameObject\Character</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameFramework.cpp">
@@ -238,6 +241,9 @@
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Missle.cpp">
+      <Filter>GameObject\Character</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

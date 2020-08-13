@@ -16,6 +16,7 @@
 #include "Bullet.h"
 #include "TestMonster.h"
 #include "Panel.h"
+#include "Missle.h"
 
 ObjectManager* pObjectManager = nullptr;
 int lastUid = 0;
@@ -49,6 +50,11 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	case ObjectType::BULLET:
 		pObj = pObjectManager->bulletPool.Alloc();
 		break;
+
+	case ObjectType::MISSILE:
+		pObj = new Missle;
+	break;	
+
 	case ObjectType::STANK:
 		pObj = new STank;
 		break;
@@ -151,6 +157,7 @@ GameObject* ObjectManager::FindNearestEnemy(GameObject* _base)
 {
 	auto& objTable = pObjectManager->objectTable;
 	GameObject* target = nullptr;
+	
 	int minDist = MAXINT;
 	D3DXVECTOR3 temp;
 
