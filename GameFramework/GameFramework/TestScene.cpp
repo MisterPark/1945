@@ -12,13 +12,7 @@ TestScene::~TestScene()
 
 void TestScene::OnLoaded()
 {
-	GameObject* leftpanel = ObjectManager::CreateObject(ObjectType::PANEL);
-	leftpanel->transform.position = { 60,300,0 };
-	leftpanel->transform.scale = { 60,300,0 };
 
-	GameObject* rightpanel = ObjectManager::CreateObject(ObjectType::PANEL);
-	rightpanel->transform.position = { dfWINDOW_WIDTH - 60,300,0 };
-	rightpanel->transform.scale = { 60,300,0 };
 	ObjectManager::CreateObject(ObjectType::PLAYER);
 
 
