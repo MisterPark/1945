@@ -37,7 +37,9 @@ void RevolutionBullet::Render()
 
 void RevolutionBullet::OnCollision(GameObject* _other)
 {
-	if (_other->type != ObjectType::BULLET && isAlliance != _other->isAlliance)
+	if (_other->type == ObjectType::BULLET) return;
+	if (_other->type == ObjectType::REV_BULLET) return;
+	if (isAlliance != _other->isAlliance)
 	{
 		Die();
 	}
