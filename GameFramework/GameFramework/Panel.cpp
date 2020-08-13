@@ -16,5 +16,5 @@ void Panel::Update()
 
 void Panel::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 }

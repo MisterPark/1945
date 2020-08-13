@@ -4,8 +4,8 @@
 
 SPlane_2::SPlane_2()
 {
-	scale.x = 25;
-	scale.y = 25;
+	transform.scale.x = 25;
+	transform.scale.y = 25;
 	speed = 300.f;
 }
 
@@ -21,15 +21,15 @@ void SPlane_2::Update()
 	{
 		tick = 0.f;
 	}
-	position.y += speed * TimeManager::DeltaTime();
+	transform.position.y += speed * TimeManager::DeltaTime();
 
-	if (position.y > 300)
+	if (transform.position.y > 300)
 	{
 		
-		if (destination.x - position.x > 0)
-			position.x += speed * TimeManager::DeltaTime();
-		if (destination.x - position.x < 0)
-			position.x -= speed * TimeManager::DeltaTime();
+		if (destination.x - transform.position.x > 0)
+			transform.position.x += speed * TimeManager::DeltaTime();
+		if (destination.x - transform.position.x < 0)
+			transform.position.x -= speed * TimeManager::DeltaTime();
 	}
 
 }
@@ -38,6 +38,6 @@ void SPlane_2::Update()
 
 void SPlane_2::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 
 }

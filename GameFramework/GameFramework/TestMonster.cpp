@@ -3,8 +3,9 @@
 
 TestMonster::TestMonster()
 {
-	position = { 100.f , -100.f,0.f };
-	scale = { 20.f,20.f,0.f };
+	transform.localPosition = { 200.f , 200.f,0.f };
+	transform.position = { 100.f,100.f,0.f };
+	transform.scale = { 20.f,20.f,0.f };
 	speed = 100.f;
 }
 
@@ -14,14 +15,14 @@ TestMonster::~TestMonster()
 
 void TestMonster::Update()
 {
-	position.y += speed * TimeManager::DeltaTime();
-	rotation.z += 10;
-	position += D3DXVECTOR3(10, 10, 10);
+	transform.localPosition.y += speed * TimeManager::DeltaTime();
+	//transform.rotation.z += 10;
+	transform.RotateAround(D3DXVECTOR3(0, 0, 0), -1);
 }
 
 void TestMonster::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 }
 
 void TestMonster::OnCollision(GameObject* _other)

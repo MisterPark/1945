@@ -61,7 +61,7 @@ void CollisionManager::UpdateGravity()
 
 		target->gravityCount+=2;
 		float gravityPower = target->gravityCount * dfGRAVITY * TimeManager::DeltaTime();
-		target->position.y += gravityPower;
+		target->transform.position.y += gravityPower;
 	}
 }
 

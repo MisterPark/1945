@@ -4,8 +4,8 @@
 
 STank::STank()
 {
-	scale.x = 20;
-	scale.y = 20;
+	transform.scale.x = 20;
+	transform.scale.y = 20;
 }
 
 STank::~STank()
@@ -15,17 +15,17 @@ STank::~STank()
 void STank::Update()
 {
 
-	if (destination.x - position.x > 0)
-		++position.x;
-	if (destination.x - position.x < 0)
-		--position.x;
-	++position.y;
+	if (destination.x - transform.position.x > 0)
+		++transform.position.x;
+	if (destination.x - transform.position.x < 0)
+		--transform.position.x;
+	++transform.position.y;
 }
 
 
 
 void STank::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 
 }

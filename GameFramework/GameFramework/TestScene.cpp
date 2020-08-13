@@ -13,8 +13,8 @@ TestScene::~TestScene()
 void TestScene::OnLoaded()
 {
 	GameObject* panel = ObjectManager::CreateObject(ObjectType::PANEL);
-	panel->position = { 60,300,0 };
-	panel->scale = { 60,300,0 };
+	panel->transform.position = { 60,300,0 };
+	panel->transform.scale = { 60,300,0 };
 
 	ObjectManager::CreateObject(ObjectType::PLAYER);
 
@@ -48,13 +48,13 @@ void TestScene::MonsterCreate()
 		if (iMonsterCount == 0)
 		{
 			GameObject* pMonster = ObjectManager::CreateObject(ObjectType::MPLANE);
-			pMonster->position = { -100.f,200.f,0.f };
+			pMonster->transform.position = { -100.f,200.f,0.f };
 			pMonster->destination = { 0.f,0.f,0.f };
 			dynamic_cast<MPlane*>(pMonster)->Set_forceX(1.f);
 			listObject.push_back(pMonster);
 
 			pMonster = ObjectManager::CreateObject(ObjectType::MPLANE);
-			pMonster->position = { dfWINDOW_WIDTH+100.f,200.f,0.f };
+			pMonster->transform.position = { dfWINDOW_WIDTH+100.f,200.f,0.f };
 			pMonster->destination = { 500.f,0.f,0.f };
 			dynamic_cast<MPlane*>(pMonster)->Set_forceX(-1.f);
 			listObject.push_back(pMonster);

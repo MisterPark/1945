@@ -4,8 +4,8 @@
 
 MPlane::MPlane()
 {
-	scale.x = 35;
-	scale.y = 35;
+	transform.scale.x = 35;
+	transform.scale.y = 35;
 	speed = 200.f;
 	SecondCount = 0.f;
 }
@@ -20,7 +20,7 @@ void MPlane::Update()
 	
 	if (count<=100&&SecondCount==0)
 	{
-		position.x += forceX * speed * TimeManager::DeltaTime();
+		transform.position.x += forceX * speed * TimeManager::DeltaTime();
 		if (count == 100)
 		{
 			
@@ -31,7 +31,7 @@ void MPlane::Update()
 	}
 	else if (count <= 100 && SecondCount >= 1 &&SecondCount<6)
 	{
-		position.x += forceX * speed * TimeManager::DeltaTime();
+		transform.position.x += forceX * speed * TimeManager::DeltaTime();
 		if (count == 100)
 		{
 			forceX *= -1.f;
@@ -42,8 +42,8 @@ void MPlane::Update()
 	else
 	{
 		speed = 200.f;
-		position.x += forceX * speed * TimeManager::DeltaTime();
-		position.y += speed * TimeManager::DeltaTime();
+		transform.position.x += forceX * speed * TimeManager::DeltaTime();
+		transform.position.y += speed * TimeManager::DeltaTime();
 	}
 }
 
@@ -51,6 +51,6 @@ void MPlane::Update()
 
 void MPlane::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 
 }

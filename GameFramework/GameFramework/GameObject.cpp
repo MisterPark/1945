@@ -17,8 +17,8 @@ void GameObject::Die()
 
 void GameObject::SetPosition(float _x, float _y)
 {
-	position.x = _x;
-	position.y = _y;
+	transform.position.x = _x;
+	transform.position.y = _y;
 }
 
 void GameObject::SetDirection(float _x, float _y)

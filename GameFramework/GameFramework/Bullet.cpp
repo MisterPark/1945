@@ -12,11 +12,11 @@ Bullet::~Bullet()
 void Bullet::Update()
 {
 	
-	position.x = position.x + cosf(radian) * speed * TimeManager::DeltaTime();
-	position.y = position.y + sinf(radian) * speed * TimeManager::DeltaTime();
+	transform.position.x = transform.position.x + cosf(radian) * speed * TimeManager::DeltaTime();
+	transform.position.y = transform.position.y + sinf(radian) * speed * TimeManager::DeltaTime();
 
-	if (position.x < 0 || position.x > dfWINDOW_WIDTH ||
-		position.y < 0 || position.y > dfWINDOW_HEIGHT)
+	if (transform.position.x < 0 || transform.position.x > dfWINDOW_WIDTH ||
+		transform.position.y < 0 || transform.position.y > dfWINDOW_HEIGHT)
 	{
 		Die();
 	}
@@ -24,7 +24,7 @@ void Bullet::Update()
 
 void Bullet::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 }
 
 void Bullet::OnCollision(GameObject * _other)

@@ -42,9 +42,8 @@ public:
 	void SetDirection(float _x, float _y);
 
 public:
-	D3DXVECTOR3 position{ 0.f,0.f,0.f };
-	D3DXVECTOR3 rotation{ 0.f,0.f,0.f };
-	D3DXVECTOR3 scale{ 1.f,1.f,0.f };
+	
+	Transform transform;
 	
 	float radian = 0.f;
 

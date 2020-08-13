@@ -4,8 +4,8 @@
 
 MTank::MTank()
 {
-	scale.x = 25;
-	scale.y = 25;
+	transform.scale.x = 25;
+	transform.scale.y = 25;
 
 }
 
@@ -16,17 +16,17 @@ MTank::~MTank()
 void MTank::Update()
 {
 
-	if (destination.x - position.x > 0)
-		++position.x;
-	if (destination.x - position.x < 0)
-		--position.x;
-	++position.y;
+	if (destination.x - transform.position.x > 0)
+		++transform.position.x;
+	if (destination.x - transform.position.x < 0)
+		--transform.position.x;
+	++transform.position.y;
 }
 
 
 
 void MTank::Render()
 {
-	RenderManager::DrawRect(position, rotation, scale);
+	RenderManager::DrawRect(transform.position, transform.rotation, transform.scale);
 
 }

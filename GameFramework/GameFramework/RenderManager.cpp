@@ -52,6 +52,39 @@ void RenderManager::DrawRect(float left, float top, float right, float bottom)
 	LineTo(pRenderManager->hBackBufferDC, (int)left, (int)top);
 }
 
+void RenderManager::DrawRect(Transform transform)
+{
+	D3DXVECTOR3 vp[4];
+	vp[0] = { -transform.scale.x,-transform.scale.y,0.f };
+	vp[1] = { transform.scale.x,-transform.scale.y,0.f };
+	vp[2] = { transform.scale.x,transform.scale.y,0.f };
+	vp[3] = { -transform.scale.x,transform.scale.y,0.f };
+
+	// Rotate (z)
+	// x * cos@ - y*sin@ , x*sin@ + y * cos@
+	D3DXVECTOR3 vq[4];
+	float radian = D3DXToRadian(transform.rotation.z);
+	vq[0].x = vp[0].x * cosf(radian) - vp[0].y * sinf(radian);
+	vq[0].y = vp[0].x * sinf(radian) + vp[0].y * cosf(radian);
+	vq[1].x = vp[1].x * cosf(radian) - vp[1].y * sinf(radian);
+	vq[1].y = vp[1].x * sinf(radian) + vp[1].y * cosf(radian);
+	vq[2].x = vp[2].x * cosf(radian) - vp[2].y * sinf(radian);
+	vq[2].y = vp[2].x * sinf(radian) + vp[2].y * cosf(radian);
+	vq[3].x = vp[3].x * cosf(radian) - vp[3].y * sinf(radian);
+	vq[3].y = vp[3].x * sinf(radian) + vp[3].y * cosf(radian);
+
+	vq[0] += transform.position;
+	vq[1] += transform.position;
+	vq[2] += transform.position;
+	vq[3] += transform.position;
+
+	MoveToEx(pRenderManager->hBackBufferDC, (int)vq[0].x, (int)vq[0].y, nullptr);
+	LineTo(pRenderManager->hBackBufferDC, (int)vq[1].x, (int)vq[1].y);
+	LineTo(pRenderManager->hBackBufferDC, (int)vq[2].x, (int)vq[2].y);
+	LineTo(pRenderManager->hBackBufferDC, (int)vq[3].x, (int)vq[3].y);
+	LineTo(pRenderManager->hBackBufferDC, (int)vq[0].x, (int)vq[0].y);
+}
+
 void RenderManager::DrawRect(D3DXVECTOR3 pos, D3DXVECTOR3 rot, D3DXVECTOR3 scale)
 {
 	D3DXVECTOR3 vp[4];

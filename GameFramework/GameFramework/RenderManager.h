@@ -11,6 +11,7 @@ public:
 	static RenderManager* GetInstance();
 	static void Release();
 	static void DrawRect(float left, float top, float right, float bottom);
+	static void DrawRect(Transform transform);
 	static void DrawRect(D3DXVECTOR3 pos, D3DXVECTOR3 dir, D3DXVECTOR3 scale);
 	static void DrawRect(const RECT& _rc);
 	static void DrawRect(const RECT& _rc, COLORREF _innerColor);
