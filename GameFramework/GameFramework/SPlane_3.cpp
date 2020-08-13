@@ -7,6 +7,9 @@ SPlane_3::SPlane_3()
 	transform.scale.x = 25;
 	transform.scale.y = 25;
 	speed = 300.f;
+	isAlliance = false;
+	simpleCollider = { -25,-25,25,25 };
+	hp = 1;
 }
 
 SPlane_3::~SPlane_3()

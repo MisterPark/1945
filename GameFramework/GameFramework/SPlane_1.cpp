@@ -8,6 +8,8 @@ SPlane_1::SPlane_1()
 	transform.scale.y = 15;
 	speed = 300.f;
 	isAlliance = false;
+	simpleCollider = { -15,-15,15,15 };
+	hp = 1;
 }
 
 SPlane_1::~SPlane_1()
@@ -30,14 +32,15 @@ void SPlane_1::Update()
 			{
 				Character* b = (Character*)ObjectManager::CreateObject(ObjectType::BULLET);
 				b->transform.scale = { 5.f,5.f,0.f };
+				b->simpleCollider = { -5,-5,5,5 };
 				b->transform.position = this->transform.position;
 
 				D3DXVECTOR3 dir = p->transform.position - transform.position;
 				D3DXVec3Normalize(&dir, &dir);
 
 				b->radian = atan2f(dir.y, dir.x);
-				b->speed = 500.f;
-				b->simpleCollider = { -5,-5,5,5 };
+				b->speed = 400.f;
+				
 				b->isAlliance = false;
 				isShooted = true;
 			}

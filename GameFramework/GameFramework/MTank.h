@@ -1,7 +1,7 @@
 #pragma once
-#include "Character.h"
+#include "Enemy.h"
 class MTank :
-	public Character
+	public Enemy
 {
 public:
 	MTank();
@@ -11,6 +11,6 @@ public:
 	void Render() override;
 	void Update() override;
 
-
+	virtual void OnCollision(GameObject* _other);
 };
 
