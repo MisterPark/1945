@@ -18,11 +18,11 @@ void LPlane::Update()
 {
 	if (SecondCount < 3)
 	{
-		if (transform.position.y < 200)
+		if (transform.position.y < destination.y)
 		{
 			transform.position.y += speed * TimeManager::DeltaTime();
 		}
-		if (transform.position.y > 200)
+		if (transform.position.y > destination.y)
 		{
 			if (count == 0)
 			{
