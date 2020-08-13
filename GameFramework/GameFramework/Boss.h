@@ -1,7 +1,20 @@
 #pragma once
-#include "Character.h"
+#include "Enemy.h"
 class Boss :
-    public Character
+	public Enemy
 {
+public:
+	Boss();
+	virtual ~Boss();
+
+public:
+	void Render() override;
+	void Update() override;
+
+	Transform leftarm;
+	Transform rightarm;
+	float count = 0.f;
+	float SecondCount = 0.f;
+	float yspeed = 0.f;
 };
 
