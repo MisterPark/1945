@@ -4,8 +4,8 @@
 
 SPlane_2::SPlane_2()
 {
-	transform.scale.x = 25;
-	transform.scale.y = 25;
+	transform.scale.x = 15;
+	transform.scale.y = 15;
 	speed = 300.f;
 }
 

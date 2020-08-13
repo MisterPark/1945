@@ -3,8 +3,8 @@
 
 Player::Player()
 {
-	transform.position.x = 100;
-	transform.position.y = 100;
+	transform.position.x = 400;
+	transform.position.y = 500;
 	transform.scale.x = 20;
 	transform.scale.y = 20;
 	speed = 300.f;
