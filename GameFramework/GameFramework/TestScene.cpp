@@ -14,7 +14,7 @@ void TestScene::OnLoaded()
 {
 	ObjectManager::CreateObject(ObjectType::PLAYER);
 
-
+	ObjectManager::CreateObject(ObjectType::TEST_MONSTER);
 }
 
 void TestScene::OnUnloaded()

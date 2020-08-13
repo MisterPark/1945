@@ -14,6 +14,7 @@
 #include "MCannon.h"
 #include "Boss.h"
 #include "Bullet.h"
+#include "TestMonster.h"
 
 ObjectManager* pObjectManager = nullptr;
 int lastUid = 0;
@@ -41,6 +42,9 @@ GameObject * ObjectManager::CreateObject(ObjectType _type)
 	GameObject* pObj = nullptr;
 	switch (_type)
 	{
+	case ObjectType::TEST_MONSTER:
+		pObj = new TestMonster;
+		break;
 	case ObjectType::BULLET:
 		pObj = pObjectManager->bulletPool.Alloc();
 		break;

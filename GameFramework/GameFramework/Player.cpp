@@ -7,7 +7,7 @@ Player::Player()
 	position.y = 100;
 	scale.x = 20;
 	scale.y = 20;
-	speed = 100.f;
+	speed = 300.f;
 }
 
 Player::~Player()
@@ -16,6 +16,8 @@ Player::~Player()
 
 void Player::Update()
 {
+	D3DXVECTOR3 oldPos = position;
+
 	if (InputManager::GetKey(VK_UP))
 	{
 		position.y -= speed * TimeManager::DeltaTime();
@@ -48,12 +50,27 @@ void Player::Update()
 		targetPos -= position;
 		D3DXVec3Normalize(&targetPos, &targetPos);
 		b->radian = atan2f(targetPos.y, targetPos.x);
-		b->speed = 100.f;
+		b->speed = 300.f;
 
 	}
 
+	if (InputManager::GetKey(VK_SPACE))
+	{
+		Attack();
+	}
 
-	
+
+	attackTick += TimeManager::DeltaTime();
+
+	if (position.x < 0 || position.x > dfWINDOW_WIDTH)
+	{
+		position.x = oldPos.x;
+	}
+
+	if(	position.y <0 || position.y > dfWINDOW_HEIGHT)
+	{
+		position.y = oldPos.y;
+	}
 }
 
 void Player::Render()
@@ -87,5 +104,18 @@ void Player::OnCollision(GameObject * _other)
 	if (_other->type == ObjectType::STANK)
 	{
 
+	}
+}
+
+void Player::Attack()
+{
+	if (attackTick > attackDelay)
+	{
+		attackTick = 0.f;
+		Character* b = (Character*)ObjectManager::CreateObject(ObjectType::BULLET);
+		b->scale = { 5.f,30.f,0.f };
+		b->position = this->position;
+		b->radian = D3DXToRadian(270.f);
+		b->speed = 700.f;
 	}
 }

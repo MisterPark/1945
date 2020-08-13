@@ -52,7 +52,7 @@ void RenderManager::DrawRect(float left, float top, float right, float bottom)
 	LineTo(pRenderManager->hBackBufferDC, (int)left, (int)top);
 }
 
-void RenderManager::DrawRect(D3DXVECTOR3 pos, D3DXVECTOR3 dir, D3DXVECTOR3 scale)
+void RenderManager::DrawRect(D3DXVECTOR3 pos, D3DXVECTOR3 rot, D3DXVECTOR3 scale)
 {
 	D3DXVECTOR3 vp[4];
 	vp[0] = { -scale.x,-scale.y,0.f };
@@ -63,7 +63,7 @@ void RenderManager::DrawRect(D3DXVECTOR3 pos, D3DXVECTOR3 dir, D3DXVECTOR3 scale
 	// Rotate (z)
 	// x * cos@ - y*sin@ , x*sin@ + y * cos@
 	D3DXVECTOR3 vq[4];
-	float radian = D3DXToRadian(dir.z);
+	float radian = D3DXToRadian(rot.z);
 	vq[0].x = vp[0].x * cosf(radian) - vp[0].y * sinf(radian);
 	vq[0].y = vp[0].x * sinf(radian) + vp[0].y * cosf(radian);
 	vq[1].x = vp[1].x * cosf(radian) - vp[1].y * sinf(radian);
