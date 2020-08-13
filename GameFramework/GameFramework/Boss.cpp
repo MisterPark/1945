@@ -14,7 +14,9 @@ Boss::Boss()
 	//¿À¸¥ÂÊÆÈ
 	rightarm.scale = { 0.25f,0.5f,0.f };
 	rightarm.rotation = { 0.f,0.f,0.f };
+	simpleCollider = { -100,-100,100,100 };
 	hp = 300;
+	isAlliance = false;
 }
 
 Boss::~Boss()
@@ -182,4 +184,16 @@ void Boss::Render()
 		
 	}
 	
+}
+
+void Boss::OnCollision(GameObject* _other)
+{
+	if (_other->type == ObjectType::BULLET && _other->isAlliance != isAlliance)
+	{
+		hp--;
+		if (hp < 0)
+		{
+			Die();
+		}
+	}
 }
