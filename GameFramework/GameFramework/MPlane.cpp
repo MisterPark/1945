@@ -11,6 +11,7 @@ MPlane::MPlane()
 	isAlliance = false;
 	simpleCollider = { -35,-35,35,35 };
 	hp = 10;
+	attackDelay = 1.f;
 }
 
 MPlane::~MPlane()
